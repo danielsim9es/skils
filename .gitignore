@@ -1,0 +1,12 @@
+__pycache__/
+*.pyc
+.venv/
+.env
+.env.*
+!.env.example
+.terraform/
+node_modules/
+dist/
+coverage/
+*.log
+achados.json
