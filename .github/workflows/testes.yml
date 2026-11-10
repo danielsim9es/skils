@@ -1,0 +1,16 @@
+name: Testes da biblioteca Skils
+on:
+  push:
+  pull_request:
+jobs:
+  unit-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Testes do scanner
+        run: python -m unittest discover -s tests -v
+      - name: Smoke do scanner
+        run: python scripts/scan.py tests/fixtures/site-inseguro --format json
